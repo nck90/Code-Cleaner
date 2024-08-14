@@ -33,11 +33,9 @@ public class CodeAnalyzer {
 
     private void analyzeFile(File file) {
         try {
-            // JavaParser 인스턴스 생성
             JavaParser javaParser = new JavaParser();
             CompilationUnit compilationUnit = javaParser.parse(file).getResult().orElseThrow();
     
-            // MethodUsageAnalyzer 인스턴스 생성
             VoidVisitor<Void> methodVisitor = new MethodUsageAnalyzer(methodUsageMap, compilationUnit);
             methodVisitor.visit(compilationUnit, null);
     

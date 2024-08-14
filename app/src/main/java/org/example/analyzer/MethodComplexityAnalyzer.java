@@ -18,9 +18,8 @@ public class MethodComplexityAnalyzer extends VoidVisitorAdapter<Void> {
     public void visit(MethodDeclaration md, Void arg) {
         super.visit(md, arg);
         String methodName = md.getNameAsString();
-        int complexity = 1;  // 기본 복잡도는 1
+        int complexity = 1;  
 
-        // 메서드 내의 모든 if 문을 분석하여 복잡도를 계산
         for (IfStmt ifStmt : md.findAll(IfStmt.class)) {
             System.out.println("Found if statement: " + ifStmt);
             complexity++;

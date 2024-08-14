@@ -30,7 +30,7 @@ public class CommandLineInterface {
             System.out.print("옵션을 선택하세요: ");
 
             int choice = scanner.nextInt();
-            scanner.nextLine(); // 버퍼 클리어
+            scanner.nextLine(); 
 
             switch (choice) {
                 case 1:

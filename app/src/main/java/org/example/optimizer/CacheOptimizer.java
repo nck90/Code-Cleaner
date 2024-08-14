@@ -18,7 +18,6 @@ public class CacheOptimizer {
 
     public void optimizeCaching(String filePath) {
         try {
-            // JavaParser 인스턴스 생성
             JavaParser javaParser = new JavaParser();
             CompilationUnit cu = javaParser.parse(new File(filePath)).getResult().orElseThrow();
 
@@ -39,12 +38,10 @@ public class CacheOptimizer {
     }
 
     private boolean shouldCacheMethod(String methodName) {
-        // 간단한 캐싱 조건: 예를 들어 메서드 이름에 'get'이 포함된 경우 캐싱
         return methodName.startsWith("get") && !cachedMethods.contains(methodName);
     }
 
     private void applyCaching(MethodCallExpr mc) {
-        // 실제 캐싱 로직 추가 (예: 메서드 호출 결과를 캐시 변수에 저장)
         System.out.println("캐싱 적용: " + mc);
     }
 }

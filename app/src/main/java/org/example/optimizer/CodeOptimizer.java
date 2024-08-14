@@ -17,7 +17,6 @@ public class CodeOptimizer {
     public void optimize() {
         System.out.println("성능 최적화 작업을 시작합니다...");
 
-        // 고급 성능 최적화 기법 적용
         optimizeLoops();
         optimizeCaching();
 
@@ -25,12 +24,10 @@ public class CodeOptimizer {
     }
 
     private void optimizeLoops() {
-        // 조건에 따라 루프 최적화 실행
         loopOptimizer.optimizeLoops("src/main/java/com/codecleaner/Example.java");
     }
 
     private void optimizeCaching() {
-        // 조건에 따라 캐시 최적화 실행
         cacheOptimizer.optimizeCaching("src/main/java/com/codecleaner/Example.java");
     }
 }
